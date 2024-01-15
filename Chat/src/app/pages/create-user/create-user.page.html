@@ -1,0 +1,25 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-back-button slot="start"></ion-back-button>
+    <ion-title>create-user</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-header collapse="condense">
+    <ion-toolbar>
+      <ion-title size="large">create-user</ion-title>
+    </ion-toolbar>
+  </ion-header>
+  <form [formGroup]="form" (submit)="createUser()">
+    <ion-list>
+      <ion-item lines="none">
+        <ion-input formControlName="name" type="text" placeholder="User Name here" labelPlacement="floating" label="User Name"></ion-input>
+      </ion-item>
+      <ion-item lines="none">
+        <ion-input formControlName="password" type="password" placeholder="Password here" labelPlacement="floating" label="Password"></ion-input>
+      </ion-item>
+    </ion-list>
+    <ion-button type="submit" [disabled]="!form.valid" expand="block">Create User</ion-button>
+  </form>
+</ion-content>
